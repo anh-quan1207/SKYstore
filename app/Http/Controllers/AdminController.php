@@ -77,13 +77,16 @@ class AdminController extends Controller
             $orderNumberByYearArray[$i] = (int)$this->orderService->countOrderByYear($i, 4);
         }
         $topProductsOrderByMonth = $this->productService->getTopProductOrderByMonth();
-       
+        $monthNow = now()->month;
+        $yearNow = now()->year;
         return view('admin.dashboard',['quantityCustomer' => $quantityCustomer,
                                                     'quantityOrder' => $quantityOrder,
                                                     'revenue' => $revenue,
                                                     'revenueByYearArray' => $revenueByYearArray,
                                                     'orderNumberByYearArray' => $orderNumberByYearArray,
                                                     'topProductsOrderByMonth' => $topProductsOrderByMonth,
+                                                    'monthNow' => $monthNow,
+                                                    'yearNow' => $yearNow,
     ]);
     }
 

@@ -97,9 +97,6 @@ class ProductVariantController extends Controller
 
         $resultCreate = $this->productVariantService->create($data);
         if ($resultCreate) {
-            $dataImage['image_path'] = $resultCreate->image_path;
-            $dataImage['product_id'] = $resultCreate->product->id;
-            $this->imageProductService->create($dataImage);
             $product = $resultCreate->product;
             $product->remain_quantity += $resultCreate->remain_quantity;
             $product->save();

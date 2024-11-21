@@ -3,7 +3,8 @@
     <link href="{{ asset('admin/css/create-product-variant.css') }}" rel="stylesheet" />
 
     <div class="redirect-common text-end">
-        <a href="{{ route('admin-product-variant-list', ['id' => $productId]) }}" class="btn btn-primary link-redirect-common">DANH SÁCH BIẾN THỂ</a>
+        <a href="{{ route('admin-product-variant-list', ['id' => $productId]) }}"
+            class="btn btn-primary link-redirect-common">DANH SÁCH BIẾN THỂ</a>
     </div>
     <div class="row mt-form-common">
         <div class="col-lg-12">
@@ -32,19 +33,18 @@
                                 <label for="size" class="control-label col-lg-12">Size <span
                                         style="color: red">*</span></label>
                                 <div class="col-lg-7">
-                                        <select class="form-control" id="size" required name="size">
-                                            @if (isset($sizes))
-                                                @foreach ($sizes as $key => $size)
-                                                    <option value="{{ $category->id }}"
-                                                        @if ($category->id == $product->category_id) selected @endif>
-                                                        {{ $category->name }}
-                                                    </option>
-                                                @endforeach
-                                            @endif
-                                        </select>
-                                        @error('size')
-                                            <span class="error">{{ $message }}</span>
-                                        @enderror
+                                    <select class="form-control" id="size" required name="size">
+                                        @if (isset($sizes))
+                                            @foreach ($sizes as $key => $size)
+                                                <option value="{{ $key }}">
+                                                    {{ $size }}
+                                                </option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                    @error('size')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">

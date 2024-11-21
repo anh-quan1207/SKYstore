@@ -25,7 +25,7 @@ class CreateProductVariantRequest extends FormRequest
             "color" => "bail|required|max:255",
             "size" => "bail|required|max:255",
             "remain_quantity" => "bail|required|integer|min:0|max:4294967295",
-            "image" => "bail|required|mimes:jpg,png,jpeg|max:5048"
+            "image" => "bail|required|mimes:jpg,png,jpeg,webp|max:5048"
         ];
     }
 
@@ -42,7 +42,7 @@ class CreateProductVariantRequest extends FormRequest
             "remain_quantity.max" => "Dữ liệu không hợp lệ !",
             "remain_quantity.integer" => "Dữ liệu không hợp lệ !",
             "image.required" => "File không được để trống !",
-            'image.mimes' => 'Định dạng file không hợp lệ(jpg, png, jpeg) !',
+            'image.mimes' => 'Định dạng file không hợp lệ(jpg, png, jpeg, webp) !',
             'image.max' => 'File nhỏ hơn 5MB !',
         ];
     }

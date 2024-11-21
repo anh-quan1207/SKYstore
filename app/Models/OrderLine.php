@@ -18,6 +18,6 @@ class OrderLine extends Model
 
     public function productVariantWithTrashed()
     {
-        return $this->belongsTo(ProductVariant::class,'product_variant_id');
+        return $this->belongsTo(ProductVariant::class, 'product_variant_id')->withTrashed();
     }
 }

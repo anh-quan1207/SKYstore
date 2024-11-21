@@ -25,7 +25,7 @@ class OrderFactory extends Factory
             'customer_id' => Customer::inRandomOrder()->first(), 
             'status' => $this->faker->randomElement([4]),
             'total_amount' => $this->faker->randomFloat(0, 150000, 2000000),
-            'created_at' => $this->faker->dateTimeBetween('2020-01-01', '2024-9-31'),
+            'created_at' => $this->faker->dateTimeBetween('2024-10-01', '2024-10-05'),
         ];
     }
 

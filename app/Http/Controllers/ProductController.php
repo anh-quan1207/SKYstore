@@ -202,7 +202,7 @@ class ProductController extends Controller
     public function storeImage($id,Request $request)
     {
         $rules = [
-            "images.*" => "bail|required|mimes:jpg,png,jpeg|max:5048",
+            "images.*" => "bail|required|mimes:jpg,png,jpeg,webp|max:5048",
         ];
         $messages = [
             'images.*.required' => 'File ảnh không được để trống !',

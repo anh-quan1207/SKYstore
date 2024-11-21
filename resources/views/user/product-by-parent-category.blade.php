@@ -106,7 +106,7 @@
                                         <div class="single-products">
                                             <a href="{{ route('product-detail', ['id' => $product->id]) }}">
                                                 <div class="productinfo">
-                                                    <img src="{{ asset('image/' . $productVariant->image_path) }}"
+                                                    <img src="{{ asset('image/' . $product->imageProducts()->first()->image_path) }}"
                                                         alt="" />
                                                     <p class="product-name">{{ $product->name }}</p>
                                                     <h2>{{ priceFormat(priceDiscount($product->price, $product->discount)) }}đ

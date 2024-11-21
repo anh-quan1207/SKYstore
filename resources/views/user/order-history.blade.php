@@ -99,7 +99,8 @@
                                     <span><b>MÃ ĐƠN HÀNG: {{ $order->order_code }}</b></span>
                                 </div>
                                 <div class="col-sm-6 text-right">
-                                    <span style="color: #858585"><b>NGÀY ĐẶT: {{ $order->created_at->format('d/m/Y H:m:s') }}</b> </span>
+                                    <span style="color: #858585"><b>NGÀY ĐẶT:
+                                            {{ $order->created_at->format('d/m/Y H:m:s') }}</b> </span>
                                     <span> | </span>
                                     <span class="status">{{ $orderStatusArray[$order->status] }}</span>
                                 </div>
@@ -109,46 +110,56 @@
                             @endphp
                             @foreach ($orderLines as $orderLine)
                                 <div class="row order-detail">
-                                <div class="col-sm-2 text-center">
-                                    <img src="{{ asset('/image/' . $orderLine->productVariantWithTrashed->image_path) }}" style="width:50%;">
-                                </div>
-                                <div class="col-sm-10">
-                                    <div class="row align-items-center">
-                                        <div class="col-sm-9">
-                                            <p class="product-name">{{ $orderLine->productVariantWithTrashed->productWithTrashed->name }}</p>
-                                            <p class="variant">Phân loại hàng: Đen, XL</p>
-                                            <p>x1</p>
-                                        </div>
-                                        <div class="col-sm-3 price text-center">
-                                            <span class="buy-price">{{ priceFormat($orderLine->price) }}đ</span>
-                                        </div>
+                                    <div class="col-sm-2 text-center">
+                                        {{-- @php
+                                            var_dump($orderLine->productVariantWithTrashed->image_path);
+                                        @endphp --}}
+                                        <img src="{{ asset('/image/' . $orderLine->productVariantWithTrashed->image_path) }}"
+                                            style="width:50%;">
                                     </div>
+                                    <div class="col-sm-10">
+                                        <div class="row align-items-center">
+                                            <div class="col-sm-9">
+                                                <p class="product-name">
+                                                    {{ $orderLine->productVariantWithTrashed->productWithTrashed->name }}
+                                                </p>
+                                                <p class="variant">Phân loại hàng: Đen, XL</p>
+                                                <p>x1</p>
+                                            </div>
+                                            <div class="col-sm-3 price text-center">
+                                                <span class="buy-price">{{ priceFormat($orderLine->price) }}đ</span>
+                                            </div>
+                                        </div>
 
+                                    </div>
                                 </div>
-                            </div>
                             @endforeach
                             <div class="row footer-order text-right">
                                 <div class="col-sm-12 mb-10">
-                                    Giảm giá: <span><strong style="color: #929292">{{ priceFormat($order->discount) }}đ</strong></span>
+                                    Giảm giá: <span><strong
+                                            style="color: #929292">{{ priceFormat($order->discount) }}đ</strong></span>
                                 </div>
                                 <div class="col-sm-12 total_amount mb-10">
-                                    Thành tiền: <span><strong style="color: #EE4D2D">{{ priceFormat($order->total_amount) }}đ</strong></span>
+                                    Thành tiền: <span><strong
+                                            style="color: #EE4D2D">{{ priceFormat($order->total_amount) }}đ</strong></span>
                                 </div>
                                 @if ($order->status == $statusPendding)
                                     <div class="col-sm-12" style="margin-top: 12px">
-                                    <a href="{{ route('cancle-order',['order_id' => $order->id]) }}"><span class="btn-status">Hủy Đơn Hàng</span></a>
-                                </div>
+                                        <a href="{{ route('cancle-order', ['order_id' => $order->id]) }}"><span
+                                                class="btn-status">Hủy Đơn Hàng</span></a>
+                                    </div>
                                 @endif
                                 @if ($order->status == $statusShipping)
                                     <div class="col-sm-12" style="margin-top: 12px">
-                                        <a href="{{ route('receive-order',['order_id' => $order->id]) }}"><span class="btn-status">Đã Nhận Hàng</span></a>
-                                </div>
+                                        <a href="{{ route('receive-order', ['order_id' => $order->id]) }}"><span
+                                                class="btn-status">Đã Nhận Hàng</span></a>
+                                    </div>
                                 @endif
                             </div>
                         </div>
                     </div>
                 @endforeach
-            {{ $orders->links() }}
+                {{ $orders->links() }}
             @endif
     </section>
 @endsection

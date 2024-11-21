@@ -124,7 +124,8 @@
                                 @if (isset($parent_catgory_id_search))
                                     <form
                                         action="{{ route('products-by-parent-category', ['parent_category' => $parentCategoryParam]) }}">
-                                        <input type="text" placeholder="Nhập tên sản phẩm" name="product_name" />
+                                        <input type="text" placeholder="Nhập tên sản phẩm" name="product_name"
+                                            value="{{ request()->input('product_name', old('product_name')) }}" />
                                         <button>
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </button>

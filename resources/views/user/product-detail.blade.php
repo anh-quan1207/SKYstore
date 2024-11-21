@@ -318,8 +318,8 @@
                         $('.cart_quantity_input').val(remainQuantity)
                     }
 
-                    if(inputValue < 1) {
-                         $('.cart_quantity_input').val(1);
+                    if (inputValue < 1) {
+                        $('.cart_quantity_input').val(1);
                     }
                 }
 

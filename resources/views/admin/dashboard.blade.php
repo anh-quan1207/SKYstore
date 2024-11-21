@@ -55,7 +55,7 @@
                     <i class="fa fa-usd"></i>
                 </div>
                 <div class="col-md-8 market-update-left">
-                    <h4>Doanh Thu T9/2024</h4>
+                    <h4>Doanh Thu T{{ $monthNow }} / {{ $yearNow }}</h4>
                     <h3>{{ priceFormat($revenue) }}</h3>
                     {{--  <p>Other hand, we denounce</p>  --}}
                 </div>
@@ -68,7 +68,7 @@
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 </div>
                 <div class="col-md-8 market-update-left">
-                    <h4>Số Đơn Hàng T9/2024</h4>
+                    <h4>Số Đơn Hàng T{{ $monthNow }} / {{ $yearNow }}</h4>
                     <h3>{{ priceFormat($quantityOrder) }}</h3>
                     {{--  <p>Other hand, we denounce</p>  --}}
                 </div>
