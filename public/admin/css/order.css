@@ -1,0 +1,42 @@
+body {
+    background-color: #f0f2f5;
+}
+
+.table-responsive {
+    font-size: 18px;
+}
+
+.panel-default {
+    box-shadow: 7px 7px 14px -4px rgba(66, 66, 66, 0.67);
+}
+
+.table>thead>tr>th {
+    font-weight: 600;
+}
+
+select.input-sm {
+    width: 200px;
+}
+
+.modal-header, h4, .close {
+    background-color: #5cb85c;
+    color: white !important;
+    text-align: center;
+    font-size: 30px;
+}
+
+.modal-footer {
+    background-color: #f9f9f9;
+}
+
+.status {
+    font-size: 14px;
+    display: block;
+    background: #ccc;
+    width: 80%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 12px;
+    color: white;
+    margin: auto;
+}
