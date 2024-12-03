@@ -201,7 +201,7 @@
                         <div class="col-sm-12">
                             <ul class="nav nav-tabs">
                                 <li><a href="#details" data-toggle="tab">MÔ TẢ CHI TIẾT</a></li>
-                                <li class="active"><a href="#reviews" data-toggle="tab">ĐÁNH GIÁ (5)</a></li>
+                                <li><a href="#" data-toggle="tab">ĐÁNH GIÁ (5)</a></li>
                             </ul>
                         </div>
                         <div class="tab-content">
