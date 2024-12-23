@@ -114,7 +114,7 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="{{ asset('frontend/images/home/logo3.png') }}"
+                            <a href="{{ route('home_page_user') }}"><img src="{{ asset('frontend/images/home/logo3.png') }}"
                                     alt="" style="width:139px;height:40px" /></a>
                         </div>
                     </div>
