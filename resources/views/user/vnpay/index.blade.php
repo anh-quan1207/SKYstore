@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                     <label for="amount">Số tiền</label>
-                    <input class="form-control" id="amount" name="amount" type="number"
+                    <input class="form-control" id="amount" name="amount"
                         value="{{ priceFormat($totalPayment) }}" readonly />
                 </div>
                 <div class="form-group">
